@@ -11,7 +11,7 @@ class Customer extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
-    protected $with = ['transactions'];
+    // protected $with = ['transactions'];
 
     public function transactions()
     {

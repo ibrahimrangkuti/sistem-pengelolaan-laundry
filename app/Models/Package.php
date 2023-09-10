@@ -11,7 +11,7 @@ class Package extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
-    protected $with = ['outlet', 'transaction_details'];
+    // protected $with = ['outlet', 'transaction_details'];
 
     public function outlet()
     {

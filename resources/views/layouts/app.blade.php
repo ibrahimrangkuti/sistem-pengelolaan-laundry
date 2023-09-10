@@ -91,7 +91,7 @@
     <!-- Bootstrap 4 -->
     <script src="{{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- ChartJS -->
-    <script src="{{ asset('template/plugins/chart.js/Chart.min.js') }}"></script>
+    {{-- <script src="{{ asset('template/plugins/chart.js/Chart.min.js') }}"></script> --}}
     <!-- Sparkline -->
     <script src="{{ asset('template/plugins/sparklines/sparkline.js') }}"></script>
     <!-- JQVMap -->

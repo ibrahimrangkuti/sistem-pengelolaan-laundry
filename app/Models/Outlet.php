@@ -11,7 +11,7 @@ class Outlet extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
-    protected $with = ['users', 'packages', 'transactions'];
+    // protected $with = ['users', 'packages', 'transactions'];
 
     public function users()
     {

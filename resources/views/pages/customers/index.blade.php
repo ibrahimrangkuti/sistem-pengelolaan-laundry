@@ -3,7 +3,10 @@
 @section('title', 'Data Pelanggan')
 
 @section('content')
-    <a href="{{ route('customers.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Pelanggan</a>
+    <div class="mb-3">
+        <a href="{{ route('customers.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Pelanggan</a>
+        <a href="{{ route('transactions.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Transaksi</a>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="card">

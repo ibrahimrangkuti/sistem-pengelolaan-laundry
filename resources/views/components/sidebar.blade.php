@@ -126,10 +126,10 @@
                 @endif
                 <li class="nav-header">LAPORAN</li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-file-alt"></i>
+                    <a href="{{ route('generateReport') }}" class="nav-link">
+                        <i class="nav-icon fas fa-file-download"></i>
                         <p>
-                            Lihat Laporan
+                            Unduh Laporan
                         </p>
                     </a>
                 </li>

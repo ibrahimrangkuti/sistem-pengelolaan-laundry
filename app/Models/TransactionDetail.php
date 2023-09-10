@@ -11,7 +11,7 @@ class TransactionDetail extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
-    protected $with = ['transaction', 'package'];
+    // protected $with = ['transaction', 'package'];
 
     public function transaction()
     {

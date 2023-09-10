@@ -5,18 +5,27 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Autentikasi
+Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
+
+    return redirect()->route('login.index');
+});
 Route::get('/login', [AuthController::class, 'login'])->name('login.index');
 Route::post('/login', [AuthController::class, 'processLogin'])->name('login.process');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
     // Dashboard
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // User
     Route::prefix('users')->middleware('role:admin')->name('users.')->group(function () {
@@ -69,4 +78,6 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{kode_transaksi}/edit', [TransactionController::class, 'update'])->name('update');
         Route::delete('/{kode_transaksi}/delete', [TransactionController::class, 'destroy'])->name('destroy');
     });
+
+    Route::get('/generate-report', [ReportController::class, 'generateReport'])->name('generateReport');
 });

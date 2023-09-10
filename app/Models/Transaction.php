@@ -11,7 +11,7 @@ class Transaction extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
-    protected $with = ['outlet', 'customer', 'user', 'transaction_details'];
+    // protected $with = ['outlet', 'customer', 'user', 'transaction_details'];
 
     public function outlet()
     {
