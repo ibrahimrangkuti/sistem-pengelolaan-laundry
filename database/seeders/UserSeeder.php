@@ -19,45 +19,50 @@ class UserSeeder extends Seeder
         User::create([
             'nama' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password' => bcrypt('123'),
+            'password' => bcrypt('admin123'),
             'role' => 'admin',
         ]);
 
         // Owner
-        User::insert([
-            [
-                'outlet_id' => 1,
-                'nama' => 'Owner 1',
-                'email' => 'owner1@gmail.com',
-                'password' => bcrypt('123'),
-                'role' => 'owner'
-            ],
-            [
-                'outlet_id' => 2,
-                'nama' => 'Owner 2',
-                'email' => 'owner2@gmail.com',
-                'password' => bcrypt('123'),
-                'role' => 'owner'
-            ],
-            [
-                'outlet_id' => 3,
-                'nama' => 'Owner 3',
-                'email' => 'owner3@gmail.com',
-                'password' => bcrypt('123'),
-                'role' => 'owner'
-            ],
+        User::create([
+            'outlet_id' => 1,
+            'nama' => 'Owner 1',
+            'email' => 'owner1@gmail.com',
+            'password' => bcrypt('owner1'),
+            'role' => 'owner'
+            // [
+            //     'outlet_id' => 2,
+            //     'nama' => 'Owner 2',
+            //     'email' => 'owner2@gmail.com',
+            //     'password' => bcrypt('123'),
+            //     'role' => 'owner'
+            // ],
+            // [
+            //     'outlet_id' => 3,
+            //     'nama' => 'Owner 3',
+            //     'email' => 'owner3@gmail.com',
+            //     'password' => bcrypt('123'),
+            //     'role' => 'owner'
+            // ],
         ]);
 
         // Kasir
-        for ($i = 0; $i < 10; $i++) {
-            $nama = $faker->unique()->firstName() . ' ' . $faker->lastName();
-            User::create([
-                'outlet_id' => $faker->randomElement([1, 2, 3]),
-                'nama' => $nama,
-                'email' => strtolower(str_replace(' ', '', $nama)) . $faker->randomNumber(2) . '@gmail.com',
-                'password' => bcrypt('123'),
-                'role' => 'kasir',
-            ]);
-        }
+        // for ($i = 0; $i < 10; $i++) {
+        //     $nama = $faker->unique()->firstName() . ' ' . $faker->lastName();
+        //     User::create([
+        //         'outlet_id' => $faker->randomElement([1, 2, 3]),
+        //         'nama' => $nama,
+        //         'email' => strtolower(str_replace(' ', '', $nama)) . $faker->randomNumber(2) . '@gmail.com',
+        //         'password' => bcrypt('123'),
+        //         'role' => 'kasir',
+        //     ]);
+        // }
+        User::create([
+            'outlet_id' => 1,
+            'nama' => 'Kasir 1',
+            'email' => 'kasir1@gmail.com',
+            'password' => bcrypt('kasir1'),
+            'role' => 'kasir'
+        ]);
     }
 }
